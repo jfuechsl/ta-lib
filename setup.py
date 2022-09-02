@@ -9,14 +9,14 @@ try:
     from setuptools import setup, Extension
     from setuptools.dist import Distribution
     requires = {
-        "install_requires": ["numpy"],
-        "setup_requires": ["numpy"]
+        "install_requires": ["numpy<1.23,>=1.18"],
+        "setup_requires": ["numpy<1.23,>=1.18"]
     }
 except ImportError:
     from distutils.core import setup
     from distutils.dist import Distribution
     from distutils.extension import Extension
-    requires = {"requires": ["numpy"]}
+    requires = {"requires": ["numpy<1.23,>=1.18"]}
 
 lib_talib_name = 'ta_lib'  # the underlying C library's name
 
@@ -172,6 +172,7 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Programming Language :: Cython",
         "Topic :: Office/Business :: Financial",
         "Topic :: Scientific/Engineering :: Mathematics",
